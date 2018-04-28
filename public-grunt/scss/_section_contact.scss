@@ -1,0 +1,213 @@
+section.contact{
+    background: url("../img/background_header.jpg") no-repeat;
+    background-size: 300%;
+    @media only screen and (min-width: 768px) {
+        background-size: contain;
+    }
+    .head_container{
+        @media only screen and (min-width: 768px) {
+            padding: 60px 0 40px 0;
+        }
+        @media only screen and (min-width: 1024px) {
+            padding: 90px 0 60px 0;
+        }
+        h4{
+            font-size: 3em;
+            font-weight: 700;
+            color: white;
+            @media only screen and (min-width: 768px) {
+                font-size: 4em;
+            }
+            @media only screen and (min-width: 1024px) {
+                font-size: 6em;
+            }
+        }
+    }
+    .content{
+        p{
+            color: white;
+            font-size: 2em;
+            line-height: 1.5;
+            font-weight: 300;
+            text-align: center;
+            padding: 0 0 80px 0;
+            max-width: 966px;
+            margin: 0 auto;
+        }
+    }
+    .contact_flex{
+        @include flexbox();
+        @include justify-content(center);
+        @include flex-wrap(wrap);
+        margin-bottom: 100px;
+        box-shadow: 0px 10px 51px 0px rgba(1, 1, 1, 0.08);
+
+        .form{
+            background: #f9f9f9;
+            flex-basis: 100%;
+            max-width: 100%;
+            padding: 30px 10px;
+            @media only screen and (min-width: 768px) {
+                padding: 30px 30px 60px 30px;
+            }
+            @media only screen and (min-width: 1024px) {
+                padding: 60px;
+                flex-basis: 70%;
+                max-width: 70%;
+            }
+            h3{
+                font-size: 2.4em;
+                font-weight: 300;
+                color: #414557;
+                padding-bottom: 40px;
+            }
+            form{
+                position: relative;
+                @include flexbox();
+                @include justify-content(space-between);
+                @include flex-wrap(wrap);
+                .name ,.email{
+                    flex-basis: 100%;
+                    max-width: 100%;
+                    @media only screen and (min-width: 768px) {
+                        flex-basis: 50%;
+                        max-width: 50%;
+                    }
+                }
+                .textarea{
+                    flex-basis: 100%;
+                    max-width: 100%;
+                }
+                .submit{
+                    margin: 30px auto;
+                    border: 0;
+                    background-color: $blue;
+                    background-image: url(../img/svg/send.svg);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    cursor: pointer;
+                    @media only screen and (min-width: 768px) {
+                        margin: 0;
+                        position: absolute;
+                        bottom: -30px;
+                        right: -30px;
+                    }
+                }
+                label{
+                    font-size: 1.4em;
+                    color: rgba(60,60,60, .7);
+                    font-weight: 300;
+                    margin-bottom: 10px;
+                    display: inline-block;
+                }
+                input:not(.submit){
+                    background: none;
+                    border: 0;
+                    width: 100%;
+                    max-width: 95%;
+                    border: 1px solid rgba(60,60,60, .1);
+                    margin-bottom: 50px;
+                    padding: 10px;
+                    font-size: 1.8em;
+                    font-weight: 300;
+                    color: #3c3c3c;
+                    &:focus{
+                        outline: 1px solid $blue;
+                    }
+
+                }
+                textarea{
+                    padding: 10px;
+                    width: 100%;
+                    font-size: 1.8em;
+                    font-weight: 300;
+                    color: #3c3c3c;
+                    // max-width: 670px;
+                    background: none;
+                    border: 0;
+                    border: 1px solid rgba(60,60,60, .1);
+                    resize: none;
+                    &:focus{
+                        outline: 1px solid $blue;
+                    }
+                }
+            }
+        }
+        .contact_details{
+            background: #282c40;
+            flex-basis: 100%;
+            max-width: 100%;
+            padding: 20px 20px;
+            @media only screen and (min-width: 768px) {
+                padding: 60px 20px;
+            }
+            @media only screen and (min-width: 1024px) {
+                flex-basis: 30%;
+                max-width: 30%;
+            }
+            @media only screen and (min-width: 992px) {
+                font-size: .8em;
+            }
+            @media only screen and (min-width: 1366px) {
+                font-size: 1em;
+            }
+            @media only screen and (min-width: 1600px) {
+                padding: 50px;
+            }
+            .contact_box{
+                position: relative;
+                @include flexbox();
+                @include justify-content(space-between);
+                @include align-items(center);
+                @include flex-wrap(wrap);
+                margin-bottom: 30px;
+                h3{
+                    font-size: 2.4em;
+                    font-weight: 300;
+                    color: white;
+                    padding-bottom: 20px;
+                    flex-basis: 100%;
+                }
+                a{
+                    color: white;
+                    text-decoration: none;
+                    font-weight: 300;
+                    font-size: 1.6em;
+                    @include transition(.3s);
+                    @include flexbox();
+                    @include flex-wrap(wrap);
+                    @include align-items(center);
+                    width: 100%;
+                    padding-bottom: 30px;
+                    &:hover{
+                        color: $blue;
+                    }
+                    img{
+                        padding-right: 20px;
+                    }
+                    flex-basis: 100%;
+                    @media only screen and (min-width: 768px) {
+                        flex-basis: 40%;
+                    }
+                    @media only screen and (min-width: 1024px) {
+                        flex-basis: 100%;
+                    }
+                }
+                &:first-of-type{
+                    &:after{
+                        content: "";
+                        position: absolute;
+                        width: 50%;
+                        height: 1px;
+                        background: rgba(255,255,255, .1);
+                        left: 0;
+                        bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

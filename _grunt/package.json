@@ -1,0 +1,20 @@
+{
+    "name": "v1",
+    "version": "0.0.1",
+    "devDependencies": {
+        "grunt": "^1.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-autoprefixer": "^2.2.0",
+        "grunt-contrib-htmlmin": "^2.4.0",
+        "grunt-contrib-imagemin": "^2.0.1",
+        "grunt-contrib-uglify": "^3.3.0",
+        "grunt-contrib-watch": "^1.0.0",
+        "grunt-image": "^2.5.0",
+        "grunt-sass": "^2.0.0",
+        "grunt-spritesmith": "^3.5.0",
+        "grunt-tinypng": "^0.7.0"
+    },
+    "dependencies": {
+        "imagemin": "^5.3.1"
+    }
+}

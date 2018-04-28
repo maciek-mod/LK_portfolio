@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 18.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" id="Warstwa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" height="43"
+	 viewBox="0 0 104 113" enable-background="new 0 0 104 113" xml:space="preserve">
+<g>
+	<defs>
+		<rect id="SVGID_1_" width="104" height="113"/>
+	</defs>
+	<clipPath id="SVGID_2_">
+		<use xlink:href="#SVGID_1_"  overflow="visible"/>
+	</clipPath>
+
+		<rect x="5" y="5" clip-path="url(#SVGID_2_)" fill="none" stroke="#00EBF6" stroke-width="10" stroke-miterlimit="10" width="94" height="103"/>
+</g>
+<rect x="26" y="27" fill="#00EBF6" width="49" height="7"/>
+<rect x="26" y="47" fill="#00EBF6" width="49" height="7"/>
+<rect x="26" y="59" fill="#00EBF6" width="49" height="7"/>
+<rect x="26" y="70" fill="#00EBF6" width="49" height="7"/>
+<rect x="26" y="82" fill="#00EBF6" width="49" height="7"/>
+</svg>

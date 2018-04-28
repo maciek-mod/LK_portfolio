@@ -1,0 +1,165 @@
+@import "_mixin_variables.scss";
+@import "_font.scss";
+@import "_reset.scss";
+@import "_header.scss";
+@import "_section_ofert.scss";
+@import "_section_portfolio.scss";
+@import "_section_contact.scss";
+@import "_post.scss";
+
+
+*{
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    font-family: 'Poppins', sans-serif;
+    font-size: 8px;
+    @media only screen and (min-width: 768px) {
+        font-size: 10px;
+    }
+}
+.container{
+    width: 94%;
+    max-width: 1360px;
+    margin: 0 auto;
+}
+.head_container{
+    width: 100%;
+    text-align: center;
+    padding: 50px 0 40px 0;
+    @media only screen and (min-width: 768px) {
+        padding: 70px 0 60px 0;
+    }
+    @media only screen and (min-width: 1024px) {
+        padding: 100px 0 90px 0;
+    }
+    h2.title{
+        font-size: 5em;
+        font-weight: 800;
+        color: $blueText;
+        text-align: center;
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        text-transform: uppercase;
+        @media only screen and (min-width: 768px) {
+            font-size: 6em;
+        }
+        @media only screen and (min-width: 1024px) {
+            font-size: 7.2em;
+        }
+        &:before{
+            content: "01";
+            position: absolute;
+            z-index: -5;
+            font-size: .7em;
+            color: $blue;
+            top: -18px;
+            left: 41px;
+            opacity: 0;
+            @include transition(1.2s);
+            @media only screen and (min-width: 768px) {
+                font-size: .63em;
+            }
+        }
+
+        &:after{
+            content: "";
+            position: absolute;
+            z-index: -5;
+            color: $blue;
+            top: 15px;
+            right: -35px;
+            width: 0px;
+            height: 20px;
+            background: $blue;
+            @include transition(1s);
+            @media only screen and (min-width: 768px) {
+                top: 51%;
+                right: -20%;
+                width: 0px;
+                height: 30px;
+            }
+        }
+        &.second{
+            &:before{
+                content: "02";
+                right: 10%;
+                left: auto;
+            }
+            &:after{
+                left: -29px;
+                top: 35%;
+            }
+        }
+        &.third{
+            color: white;
+            &:before{
+                content: "03";
+                left: 9%;
+                top: -22px;
+            }
+            &:after{
+                top: 31%;
+                right: -5%;
+            }
+        }
+        &.active{
+            &:before{
+                opacity: 1;
+            }
+            &:after{
+                width: 109px;
+                @media only screen and (min-width: 768px) {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
+.show_more{
+    background: $blue;
+    color: $blueText;
+    font-weight: 700;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 30px;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 15px 30px;
+    @media only screen and (min-width: 768px){
+        padding: 15px 30px;
+    }
+    @media only screen and (min-width: 1024px){
+        padding: 23px 40px;
+    }
+}
+.show_all{
+    text-align: center;
+    padding: 40px 0 60px 0;
+    @media only screen and (min-width: 768px){
+        padding: 60px 0 80px 0;
+    }
+    @media only screen and (min-width: 1024px){
+        padding: 80px 0 100px 0;
+    }
+    a{
+        font-size: 1.8em;
+        color: $blueText;
+        text-decoration: none;
+        position: relative;
+        &:after{
+            content: "";
+            background: url(../img/svg/arrow_down.svg) no-repeat;
+            width: 17px;
+            height: 24px;
+            background-size: cover;
+            position: absolute;
+            left: calc(50% - 7px);
+            bottom: -30px;
+        }
+    }
+}
