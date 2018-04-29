@@ -1,5 +1,4 @@
 $(document).ready(function() {
-	console.log("dziala");
     var mobile_menu = $(".mobile_container"),
         pos_doc = null;
     nav_elemnt = $("nav");
@@ -82,5 +81,24 @@ $(document).ready(function() {
         });
     }
     drawLine();
+
+	//ukrywanie powyzej 3 postówarn
+
+	function showButtonMore(){
+		if ($(".portfolio_inner").find(".item_flex").length > 2) {
+			$(".show_all").show();
+			$(".show_all").on("click", function(event){
+				event.preventDefault();
+				$(this).hide();
+				$(".portfolio_inner").find(".item_flex").each(function(index) {
+					if ($(this).css("display") == "none") {
+						$(this).slideDown();
+						$(this).css("display", "flex");
+					}
+		        });
+			});
+		}
+	}
+	showButtonMore();
 
 });

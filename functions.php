@@ -1,23 +1,31 @@
 <?php
+
+add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
+    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
+    return $html;
+}
+
 function wpb_adding_scripts() {
 wp_register_script('my_amazing_script', get_template_directory_uri() . '/public/js/jquery-3.1.1.min.js', array('jquery'),'1.1', true);
 wp_enqueue_script('my_amazing_script');
 }
-  
-add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' ); 
+
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts' );
 
 function wpb_adding_scripts2() {
 wp_register_script('main_js', get_template_directory_uri() . '/public/js/main.min.js', array('jquery'),'1.1', true);
 wp_enqueue_script('main_js');
 }
-  
-add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts2' ); 
+
+add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts2' );
 
 function wpb_adding_styles() {
 wp_register_style('my_stylesheet', get_template_directory_uri() . '/public/css/default.min.css', __FILE__ );
 wp_enqueue_style('my_stylesheet');
 }
-add_action( 'wp_enqueue_scripts', 'wpb_adding_styles' ); 
+add_action( 'wp_enqueue_scripts', 'wpb_adding_styles' );
 
 
 
@@ -606,6 +614,3 @@ require get_parent_theme_file_path( '/inc/customizer.php' );
  * SVG icons functions and filters.
  */
 require get_parent_theme_file_path( '/inc/icon-functions.php' );
-
-
-

@@ -29,12 +29,14 @@
 			$menuOfert = "OFFER<br/><span>What we do?</span>";
 			$menuPortfolio = "PORTFOLIO<br/><span>What we offer?</span>";
 			$menuContact = "Contact<br/><span>Write to us</span>";
+			$h1Text = "<h1>Mam na imię Łukasz.</h1><h2>Jak mogę Ci pomóc?</h2>";
 
 		} else if (pll_current_language() == 'pl') {
 		 	$menuMainPage = "STRONA GŁÓWNA<br/><span>Poznaj nas</span>";
 			$menuOfert = "OFERTA<br/><span>Co robimy?</span>";
 			$menuPortfolio = "PORTFOLIO<br/><span>Co oferujemy?</span>";
 			$menuContact = "KONTAKT<br/><span>Napisz do nas</span>";
+			$h1Text = "<h1>Mam na imię Łukasz.</h1><h2>Jak mogę Ci pomóc?</h2>";
 		} ?>
 	<nav>
         <div class="container">

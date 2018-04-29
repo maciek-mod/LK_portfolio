@@ -14,15 +14,34 @@
 
 get_header(); ?>
 
+<?php if (pll_current_language() == 'en') {
+	$h1Text = "<h1>My name is Luke.</h1><h2>How can I help you?</h2>";
+	$buttonCheck = "Check";
+	$buttonEval = "evaluate your project";
+	$h2Ofert = "Offer";
+	$h2Portfolio ="PORTFOLIO";
+	$h2Contact ="CONTACT";
+	$buttonCheckAll = "see all realizations";
+
+} else if (pll_current_language() == 'pl') {
+	$h1Text = "<h1>Mam na imię Łukasz.</h1><h2>Jak mogę Ci pomóc?</h2>";
+	$buttonCheck = "Sprawdź";
+	$buttonEval = "wyceń swój projekt";
+	$h2Ofert = "OFERTA";
+	$h2Portfolio ="PORTFOLIO";
+	$h2Contact ="KONTAKT";
+	$buttonCheckAll = "zobacz wszystkie realizacje";
+
+} ?>
+
 <header class="main_page">
 	<div class="container">
 		<div class="text_container">
-			<h1>Mam na imię Łukasz.</h1>
-			<h2>Jak mogę Ci pomóc?</h2>
+			<?php echo $h1Text ?>
 		</div>
 		<div class="button_section">
-			<a class="button" href="#">Sprawdź</a>
-			<a class="button" href="#">wyceń swój projekt</a>
+			<a class="button" href="#"> <?php echo $buttonCheck ?> </a>
+			<a class="button" href="#"> <?php echo $buttonEval ?> </a>
 		</div>
 		<div class="scroll_section">
 			<div class="scroll_down">
@@ -35,43 +54,43 @@ get_header(); ?>
 <section class="ofert">
 	<div class="container">
 		<div class="head_container">
-			<h2 class="title">Oferta</h2>
+			<h2 class="title"><?php echo $h2Ofert ?></h2>
 		</div>
 		<div class="oferts_flex">
 			<div class="flex_inner">
 				<div class="box_oferts">
 					<div class="head">
 						<img src="<?php bloginfo('template_url'); ?>/img/svg/www.svg" alt="WWW">
-						<p>strony www<br/><span>i aplikacje webowe</span></p>
+						<p><?php the_field('Offer_www_head'); ?></p>
 					</div>
-					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper dolor. Etiam rutrum sapien et dui dapibus tempus. Ut tempor purus ut tellus venenatis, et euismod eros imperdiet. Nullam nulla.</p>
+					<div class="text"><?php the_field('Offer_www_text'); ?></div>
 				</div>
 			</div>
 			<div class="flex_inner">
 				<div class="box_oferts">
 					<div class="head">
 						<img src="<?php bloginfo('template_url'); ?>/img/svg/phone.svg" alt="Aplikacje mobile">
-						<p>aplikacje<br/><span>na telefon</span></p>
+						<p><?php the_field('Offer_app_head'); ?></p>
 					</div>
-					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper dolor. Etiam rutrum sapien et dui dapibus tempus. Ut tempor purus ut tellus venenatis, et euismod eros imperdiet. Nullam nulla.</p>
+					<div class="text"><?php the_field('Offer_app_text'); ?></div>
 				</div>
 			</div>
 			<div class="flex_inner">
 				<div class="box_oferts">
 					<div class="head">
 						<img src="<?php bloginfo('template_url'); ?>/img/svg/ident.svg" alt="Identyfikacja wizualna">
-						<p>identyfikacja<br/><span>wizualna</span> </p>
+						<p><?php the_field('Offer_ident_head'); ?></p>
 					</div>
-					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper dolor. Etiam rutrum sapien et dui dapibus tempus. Ut tempor purus ut tellus venenatis, et euismod eros imperdiet. Nullam nulla.</p>
+					<div class="text"><?php the_field('Offer_ident_text'); ?></div>
 				</div>
 			</div>
 			<div class="flex_inner">
 				<div class="box_oferts">
 					<div class="head">
 						<img src="<?php bloginfo('template_url'); ?>/img/svg/leaflets.svg" alt="Ulotki">
-						<p>ulotki<br/><span>i wizytówki</span></p>
+						<p><?php the_field('Offer_business_card_head'); ?></p>
 					</div>
-					<p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper dolor. Etiam rutrum sapien et dui dapibus tempus. Ut tempor purus ut tellus venenatis, et euismod eros imperdiet. Nullam nulla.</p>
+					<div class="text"><?php the_field('Offer_business_card_text'); ?></div>
 				</div>
 			</div>
 
@@ -81,51 +100,28 @@ get_header(); ?>
 <section class="portfolio">
 	<div class="container">
 		<div class="head_container">
-			<h2 class="title second">PORTFOLIO</h2>
+			<h2 class="title second"><?php echo $h2Portfolio ?></h2>
 		</div>
 	</div>
 	<div class="portfolio_inner">
-		<div class="item_flex">
-			<div class="img_container">
-				<img src="<?php bloginfo('template_url'); ?>/img/portfolio_1.jpg" alt="foto">
+		<?php $custom_query = new WP_Query('cat=-9'); // exclude category 9
+		while($custom_query->have_posts()) : $custom_query->the_post(); ?>
+			<div class="item_flex">
+					<div class="img_container">
+						<?php if ( has_post_thumbnail() ) {
+							the_post_thumbnail( 'category-thumb' );
+						} ?>
+					</div>
+					<div class="text_container">
+						<p class="category"> <?php the_category( ', ' ); ?></p>
+						<p class="name"><?php the_title(); ?></p>
+						<a href="<?php the_permalink(); ?>" class="show_more" >Zobacz projekt</a>
+					</div>
 			</div>
-			<div class="text_container">
-				<p class="category">application</p>
-				<p class="name">Simple Wallet</p>
-				<a class="show_more" href="#">Zobacz projekt</a>
-			</div>
-		</div>
-		<div class="item_flex">
-			<div class="img_container">
-				<img src="<?php bloginfo('template_url'); ?>/img/portfolio_1.jpg" alt="foto">
-			</div>
-			<div class="text_container">
-				<p class="category">application</p>
-				<p class="name">Simple<br/>Wallet</p>
-				<a class="show_more" href="#">Zobacz projekt</a>
-			</div>
-		</div>
-		<div class="item_flex">
-			<div class="img_container">
-				<img src="<?php bloginfo('template_url'); ?>/img/portfolio_1.jpg" alt="foto">
-			</div>
-			<div class="text_container">
-				<p class="category">application</p>
-				<p class="name">Simple<br/>Wallet</p>
-				<a class="show_more" href="#">Zobacz projekt</a>
-			</div>
-		</div>
-		<div class="item_flex">
-			<div class="img_container">
-				<img src="<?php bloginfo('template_url'); ?>/img/portfolio_1.jpg" alt="foto">
-			</div>
-			<div class="text_container">
-				<p class="category">application</p>
-				<p class="name">Simple<br/>Wallet</p>
-				<a class="show_more" href="#">Zobacz projekt</a>
-			</div>
-		</div>
+		<?php endwhile; ?>
+		<?php wp_reset_postdata(); ?>
 	</div>
+
 	<div class="show_all">
 		<a href="#">zobacz wszystkie realizacje</a>
 	</div>
@@ -134,10 +130,10 @@ get_header(); ?>
 <section class="contact">
 	<div class="container">
 		<div class="head_container">
-			<h2 class="title third">Kontakt</h2>
+			<h2 class="title third"><?php echo $h2Contact ?></h2>
 		</div>
 		<div class="content">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vel ullamcorper dolor. Etiam rutrum sapien et dui dapibus tempus. Ut tempor purus ut tellus venenatis,</p>
+			<?php the_field('contact_text'); ?>
 		</div>
 		<div class="contact_flex">
 			<div class="form">
