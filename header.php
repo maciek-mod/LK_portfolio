@@ -42,13 +42,13 @@
         <div class="container">
             <div class="deskop">
                 <div class="logo">
-                    <a href="#"> <img src="<?php bloginfo('template_url'); ?>/img/svg/logo.svg" alt="Łukasz Wróbel"> </a>
+                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>"> <img src="<?php bloginfo('template_url'); ?>/img/svg/logo.svg" alt="Łukasz Wróbel"> </a>
                 </div>
                 <ul id="deskop">
-                    <li> <a href="/" data-scroll="main_page"><?php echo $menuMainPage ?></a></li>
-                    <li> <a href="/ofert" data-scroll="ofert"><?php echo $menuOfert ?></a></li>
-                    <li> <a href="/portfolio" data-scroll="portfolio"><?php echo $menuPortfolio ?></a></li>
-                    <li> <a href="/contact" data-scroll="contact"><?php echo $menuContact ?></a> </li>
+                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#main_page" data-scroll="main_page"><?php echo $menuMainPage ?></a></li>
+                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#ofert" data-scroll="ofert"><?php echo $menuOfert ?></a></li>
+                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#portfolio" data-scroll="portfolio"><?php echo $menuPortfolio ?></a></li>
+                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" data-scroll="contact"><?php echo $menuContact ?></a> </li>
                 </ul>
                 <div class="lang">
 				<ul>
@@ -69,10 +69,10 @@
                 </div>
                 <div class="mobile_container">
                     <ul id="mobile_menu">
-						<li> <a href="/" data-scroll="main_page"><?php echo $menuMainPage ?></a></li>
-						<li> <a href="/ofert" data-scroll="ofert"><?php echo $menuOfert ?></a></li>
-						<li> <a href="/portfolio" data-scroll="portfolio"><?php echo $menuPortfolio ?></a></li>
-						<li> <a href="/contact" data-scroll="contact"><?php echo $menuContact ?></a> </li>
+						<li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#main_page" data-scroll="main_page"><?php echo $menuMainPage ?></a></li>
+	                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#ofert" data-scroll="ofert"><?php echo $menuOfert ?></a></li>
+	                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#portfolio" data-scroll="portfolio"><?php echo $menuPortfolio ?></a></li>
+	                    <li> <a href="<?php echo esc_url( home_url( '/' ) ); ?>#contact" data-scroll="contact"><?php echo $menuContact ?></a> </li>
                     </ul>
                     <br/>
                     <div class="lang">

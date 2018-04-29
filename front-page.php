@@ -34,7 +34,7 @@ get_header(); ?>
 
 } ?>
 
-<header class="main_page">
+<header class="main_page" id="main_page">
 	<div class="container">
 		<div class="text_container">
 			<?php echo $h1Text ?>
@@ -51,7 +51,7 @@ get_header(); ?>
 	</div>
 </header>
 
-<section class="ofert">
+<section class="ofert" id="ofert">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title"><?php echo $h2Ofert ?></h2>
@@ -97,7 +97,7 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-<section class="portfolio">
+<section class="portfolio" id="portfolio">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title second"><?php echo $h2Portfolio ?></h2>
@@ -138,22 +138,7 @@ get_header(); ?>
 		<div class="contact_flex">
 			<div class="form">
 				<h3>Wyślij nam wiadomość</h3>
-				<form class="" action="index.html" method="post">
-					<div class="name">
-						<label for="">Imię</label> <br/>
-						<input type="text" name="" id="name" value="" placeholder="...">
-					</div>
-					<div class="email">
-						<label for="">E-mail adress</label> <br/>
-						<input type="email" name="" id="name" value="" placeholder="...">
-					</div>
-					<div class="textarea">
-						<label for="">Wiadomość</label> <br/>
-						<textarea  rows="8" cols="80" placeholder="Wpisz Wiadomość"></textarea>
-					</div>
-					<input type="submit" class="submit" name="" value="">
-
-				</form>
+				<?php echo do_shortcode( '[contact-form-7 id="96" title="Formularz 1"]' ); ?>
 			</div>
 			<div class="contact_details">
 				<div class="contact_box">
@@ -170,6 +155,9 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
+
+
+
 
 
 <?php get_footer();
