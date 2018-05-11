@@ -80,30 +80,48 @@ $(document).ready(function() {
         var pos_doc = $(window).scrollTop();
         var h2_element = $("h2.title");
         h2_element.each(function(index) {
-            if (pos_doc > ($(this).position().top - $("nav").height() - ($( window ).height() / 3))) {
+            if (pos_doc > ($(this).position().top - $("nav").height() - ($(window).height() / 3))) {
                 $(this).addClass("active");
             }
         });
     }
     drawLine();
 
-	//ukrywanie powyzej 3 postówarn
+    //ukrywanie powyzej 3 postówarn
 
-	function showButtonMore(){
-		if ($(".portfolio_inner").find(".item_flex").length > 2) {
-			$(".show_all").show();
-			$(".show_all").on("click", function(event){
-				event.preventDefault();
-				$(this).hide();
-				$(".portfolio_inner").find(".item_flex").each(function(index) {
-					if ($(this).css("display") == "none") {
-						$(this).slideDown();
-						$(this).css("display", "flex");
-					}
-		        });
-			});
-		}
-	}
-	showButtonMore();
+    function showButtonMore() {
+        if ($(".portfolio_inner").find(".item_flex").length > 2) {
+            $(".show_all").show();
+            $(".show_all").on("click", function(event) {
+                event.preventDefault();
+                $(this).hide();
+                $(".portfolio_inner").find(".item_flex").each(function(index) {
+                    if ($(this).css("display") == "none") {
+                        $(this).slideDown();
+                        $(this).css("display", "flex");
+                    }
+                });
+            });
+        }
+    }
+    showButtonMore();
+
+    var positionY,
+        positionX,
+        paralaxImg = $("#paralax"),
+        widthEl,
+        heightEl,
+        positionLeft,
+        positionTop;
+    $('#main_page').mousemove(function(e) {
+        widthEl = $(this).outerWidth();
+        heightEl = $(this).outerHeight();
+        positionX = e.clientX;
+        positionY = e.clientY;
+        positionLeft = ((((widthEl / 2) - positionX) * 100) / widthEl)/ 15;
+        positionTop = ((((heightEl / 2) - positionY) * 100) / heightEl)/ 15;
+        paralaxImg.css({"left": -10 + positionLeft + "%", "top": -10 + positionTop + "%"});
+    });
+
 
 });

@@ -10,31 +10,35 @@ nav {
     @media only screen and (min-width: 1600px) {
         top: 100px;
     }
-    &.active{
+
+    &.active {
         padding: 10px 0;
         background: $darkBlue;
-        top: 0px;
+        top: 0;
         @media only screen and (min-width: 992px) {
             padding: 15px 0;
         }
     }
-    .lang{
-        ul{
-            li{
+
+    .lang {
+        ul {
+            li {
                 font-size: 3em;
                 color: white;
                 font-weight: 400;
                 display: inline-block;
                 padding-right: 15px;
                 text-transform: uppercase;
-                @media only screen and (min-width: 992px){
+                @media only screen and (min-width: 992px) {
                     font-size: 1.7em;
                 }
-                a{
+
+                a {
                     color: inherit;
                     text-decoration: none;
                 }
-                &.current-lang{
+
+                &.current-lang {
                     color: $blue;
                     font-weight: 700;
                 }
@@ -42,23 +46,24 @@ nav {
         }
     }
 
-    .deskop{
+    .deskop {
         display: none;
-        @media only screen and (min-width: 992px) {
-            @include flexbox();
+        @media only screen and (min-width: 1024px) {
+             @include flexbox();
             @include flex-wrap(wrap);
             @include justify-content(space-around);
             @include align-items(center);
         }
+
         #deskop {
-            @media only screen and (min-width: 992px) {
-                @include flexbox();
+            @media only screen and (min-width: 1024px) {
+                 @include flexbox();
                 @include flex-wrap(wrap);
                 @include justify-content(space-around);
                 @include align-items(center);
             }
             @media only screen and (min-width: 992px) {
-                font-size: .8em;
+                font-size: 0.8em;
             }
             @media only screen and (min-width: 1600px) {
                 font-size: 1em;
@@ -71,7 +76,8 @@ nav {
                 text-align: center;
                 cursor: pointer;
                 @include transition(.3s);
-                a{
+
+                a {
                     text-decoration: none;
                     color: inherit;
                 }
@@ -92,11 +98,10 @@ nav {
                 }
             }
         }
-
     }
 
     .mobile {
-        @media only screen and (min-width: 992px) {
+        @media only screen and (min-width: 1024px) {
             display: none;
         }
 
@@ -107,11 +112,13 @@ nav {
             @include justify-content(space-between);
             @include align-items(center);
             @include flex-wrap(wrap);
-            h2{
+
+            h2 {
                 font-size: 2em;
                 font-weight: 300;
                 color: white;
             }
+
             .hamburger_inner {
                 #nav-icon4 {
                     width: 60px;
@@ -129,6 +136,7 @@ nav {
                     transform: scale(.8);
                     transform-origin: center;
                 }
+
                 #nav-icon4 span {
                     display: block;
                     position: absolute;
@@ -210,7 +218,6 @@ nav {
             @include transition(.5s);
             @include flex-direction(column);
 
-
             &.active {
                 top: 0;
             }
@@ -221,7 +228,8 @@ nav {
 
                 li {
                     padding-bottom: 15px;
-                    a{
+
+                    a {
                         text-decoration: none;
                         color: inherit;
                     }
@@ -237,11 +245,30 @@ nav {
 }
 
 header.main_page {
+    position: relative;
     min-height: 100vh;
-    background: url("../img/background_header.jpg") no-repeat;
+    background: url(../img/background_header.jpg?10) no-repeat;
     background-position: center;
     background-size: cover;
-
+    @media only screen and (min-width: 1366px) {
+        background: #333951; /* Old browsers */
+        background: -moz-linear-gradient(-45deg, #333951 0%, #171b27 100%); /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #333951 0%,#171b27 100%); /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, #333951 0%,#171b27 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        overflow: hidden;
+    }
+    #paralax{
+        display: none;
+        position: absolute;
+        left: -10%;
+        top: -10%;
+        width: 120%;
+        @include transition(.1s);
+        @media only screen and (min-width: 1366px) {
+            display: inline-block;
+        }
+    }
     .container {
         position: relative;
         min-height: 100vh;

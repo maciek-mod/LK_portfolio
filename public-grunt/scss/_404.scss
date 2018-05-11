@@ -1,0 +1,22 @@
+body.error404{
+    .wrap{
+        background: url("../img/background_header.jpg") no-repeat;
+        background-size: cover;
+        height: 100vh;
+        @include flexbox();
+        @include align-items(center);
+        @include justify-content(center);
+        .error-404{
+
+            h1 ,a{
+                color: white;
+                font-size: 2em;
+                line-height: 1.3;
+                @media only screen and (min-width: 768px) {
+                    font-size: 3em;
+                }
+            }
+        }
+    }
+
+}

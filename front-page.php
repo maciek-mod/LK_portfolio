@@ -35,6 +35,7 @@ get_header(); ?>
 } ?>
 
 <header class="main_page" id="main_page">
+	<img id="paralax" src="<?php bloginfo('template_url'); ?>/img/header_paralax.png" alt="paralax" />
 	<div class="container">
 		<div class="text_container">
 			<?php echo $h1Text ?>
