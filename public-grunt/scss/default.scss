@@ -12,6 +12,13 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
+.hidden_section{
+    @include transition(.8s);
+    opacity: 0;
+}
+.show_section{
+    opacity: 1;
+}
 
 
 body{

@@ -1,8 +1,12 @@
 $(document).ready(function() {
     var mobile_menu = $(".mobile_container"),
         pos_doc = null,
+        pos_doc2 = null,
         nav_elemnt = $("nav"),
-        main_page = $(".main_page");
+        main_page = $(".main_page"),
+        button_section = $(".button_section"),
+        section_main = $("body.home").find("section"),
+        bottom_position = null;
 
     // menu mobile
     $("#nav-icon4").click(function() {
@@ -26,6 +30,34 @@ $(document).ready(function() {
                 scrollTop: section_position
             }, time, function() {});
         });
+        //buttony w headerze, scrolowanie
+        button_section.find("a").click(function(event) {
+            event.preventDefault();
+            var section = $("." + $(this).attr("data-scroll"));
+            var section_position = section.position().top - $("nav").height();
+            var pos_doc = $(window).scrollTop();
+            if (pos_doc > section_position) {
+                var time = (pos_doc - section_position);
+            } else {
+                var time = (section_position - pos_doc);
+            }
+            $("html, body").stop().animate({
+                scrollTop: section_position
+            }, time, function() {});
+        });
+        $(window).scroll(function(event) {
+            showSection();
+        });
+        function showSection(){
+            pos_doc2 = $(window).scrollTop();
+            bottom_position = pos_doc2 + $(window).height();
+            section_main.each(function(index) {
+                if (bottom_position > ($(this).position().top + 300)) {
+                    $(this).addClass("show_section");
+                }
+            });
+        }
+        showSection();
     }
 
     // scroll menu
@@ -113,11 +145,11 @@ $(document).ready(function() {
         heightEl,
         positionLeft,
         positionTop;
-    $('#main_page').mousemove(function(e) {
+    $('#main_page').mousemove(function(event) {
         widthEl = $(this).outerWidth();
         heightEl = $(this).outerHeight();
-        positionX = e.clientX;
-        positionY = e.clientY;
+        positionX = event.clientX;
+        positionY = event.clientY;
         positionLeft = ((((widthEl / 2) - positionX) * 100) / widthEl)/ 15;
         positionTop = ((((heightEl / 2) - positionY) * 100) / heightEl)/ 15;
         paralaxImg.css({"left": -10 + positionLeft + "%", "top": -10 + positionTop + "%"});

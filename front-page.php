@@ -41,8 +41,8 @@ get_header(); ?>
 			<?php echo $h1Text ?>
 		</div>
 		<div class="button_section">
-			<a class="button" href="#"> <?php echo $buttonCheck ?> </a>
-			<a class="button" href="#"> <?php echo $buttonEval ?> </a>
+			<a class="button" href="/" data-scroll="ofert"> <?php echo $buttonCheck ?> </a>
+			<a class="button" href="/" data-scroll="contact"> <?php echo $buttonEval ?> </a>
 		</div>
 		<div class="scroll_section">
 			<div class="scroll_down">
@@ -52,7 +52,7 @@ get_header(); ?>
 	</div>
 </header>
 
-<section class="ofert" id="ofert">
+<section class="ofert hidden_section" id="ofert">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title"><?php echo $h2Ofert ?></h2>
@@ -98,7 +98,7 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-<section class="portfolio" id="portfolio">
+<section class="portfolio hidden_section" id="portfolio">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title second"><?php echo $h2Portfolio ?></h2>
@@ -128,7 +128,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="contact">
+<section class="contact hidden_section">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title third"><?php echo $h2Contact ?></h2>

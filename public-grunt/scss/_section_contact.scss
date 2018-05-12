@@ -1,8 +1,8 @@
 section.contact{
-    background: url("../img/background_header.jpg") no-repeat;
+    background: url("../img/background_contact.jpg") no-repeat;
     background-size: cover;
     @media only screen and (min-width: 768px) {
-        background-size: 300%;
+        // background-size: 300%;
 
     }
     .head_container{
@@ -74,7 +74,7 @@ section.contact{
                 @include flexbox();
                 @include justify-content(space-between);
                 @include flex-wrap(wrap);
-                .name ,.email{
+                .name ,.email {
                     flex-basis: 100%;
                     max-width: 100%;
                     @media only screen and (min-width: 768px) {
@@ -82,9 +82,22 @@ section.contact{
                         max-width: 48%;
                     }
                 }
-                .textarea{
+                .textarea ,.recaptcha{
                     flex-basis: 100%;
                     max-width: 100%;
+                }
+                .textarea{
+                    padding-bottom: 30px;
+                }
+                .recaptcha{
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include flex-wrap(wrap);
+                    iframe{
+                        transform-origin: center;
+                        transform: scale(.9);
+                    }
+
                 }
                 .submit{
                     color: $blue;
@@ -130,7 +143,7 @@ section.contact{
                 textarea{
                     padding: 10px;
                     width: 100%;
-                    max-height: 216px;
+                    max-height: 184px;
                     font-size: 1.8em;
                     font-weight: 300;
                     color: #3c3c3c;
