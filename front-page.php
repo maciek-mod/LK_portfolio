@@ -149,8 +149,8 @@ get_header(); ?>
 				</div>
 				<div class="contact_box">
 					<h3>Sprawdź nas tutaj</h3>
-					<a href=""> <img src="<?php bloginfo('template_url'); ?>/img/svg/fb.svg" alt="Telefon">Facebook</a>
-					<a href=""> <img src="<?php bloginfo('template_url'); ?>/img/svg/behance.svg" alt="Telefon">Behance</a>
+					<a href="https://www.behance.net/user/?username=lwrobel" target="_blank"> <img src="<?php bloginfo('template_url'); ?>/img/svg/fb.svg" alt="behance">Facebook</a>
+					<a target="_blank"> <img src="<?php bloginfo('template_url'); ?>/img/svg/behance.svg" alt="facebook">Behance</a>
 				</div>
 			</div>
 		</div>

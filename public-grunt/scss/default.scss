@@ -14,14 +14,79 @@
 }
 .hidden_section{
     h1,h2,h3,h4,h5,h6,p,img{
-        @include transition(.8s);
+        @include transition(.6s);
+        transform-origin: center;
+        transform: scale(.8);
         opacity: 0;
+    }
+    .oferts_flex{
+        .flex_inner{
+            &:nth-child(1){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .2s;
+                }
+            }
+            &:nth-child(2){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .4s;
+                }
+            }
+            &:nth-child(3){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .6s;
+                }
+            }
+            &:nth-child(4){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .8s;
+                }
+            }
+        }
+    }
+    .portfolio_inner{
+        .item_flex{
+            &:nth-child(1){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .2s;
+                }
+            }
+            &:nth-child(2){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .4s;
+                }
+            }
+            &:nth-child(3){
+                h1,h2,h3,h4,h5,h6,p,img{
+                    transition-delay: .6s;
+                }
+            }
+        }
+    }
+    &.contact{
+        .content{
+            h1,h2,h3,h4,h5,h6,p,img{
+                transition-delay: .2s;
+            }
+        }
+        .contact_flex{
+            opacity: 0;
+            @include transition(.6s);
+            transform: scale(.8);
+            transition-delay: .6s;
+        }
     }
 }
 .show_section{
     h1,h2,h3,h4,h5,h6,p,img{
         @include transition(.8s);
+        transform: scale(1);
         opacity: 1;
+    }
+    &.contact{
+        .contact_flex{
+            transform: scale(1);
+            opacity: 1;
+        }
     }
 }
 
