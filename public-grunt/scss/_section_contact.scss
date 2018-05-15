@@ -31,16 +31,20 @@ section.contact{
             line-height: 1.5;
             font-weight: 300;
             text-align: center;
-            padding: 0 0 80px 0;
             max-width: 966px;
             margin: 0 auto;
+            padding-bottom: 30px;
+            @media only screen and (min-width: 1024px) {
+                padding-bottom: 0px;
+
+            }
         }
     }
     .contact_flex{
         @include flexbox();
         @include justify-content(center);
         @include flex-wrap(wrap);
-        @media only screen and (min-width: 768px) {
+        @media only screen and (min-width: 1024px) {
             position: relative;
             top: 100px;
             margin-bottom: 100px;
@@ -67,11 +71,10 @@ section.contact{
                 padding: 30px 30px 60px 30px;
             }
             @media only screen and (min-width: 1024px) {
-                padding: 60px;
+                padding: 30px 60px;
                 flex-basis: 70%;
                 max-width: 844px;
                 box-shadow: 0px 10px 51px 0px rgba(1, 1, 1, 0.08);
-
             }
 
             form{
@@ -92,12 +95,12 @@ section.contact{
                         max-width: 48%;
                     }
                 }
-                .textarea ,.recaptcha{
+                .textarea ,.inner_flex{
                     flex-basis: 100%;
                     max-width: 100%;
                 }
                 .textarea{
-                    padding-bottom: 30px;
+                    padding-bottom: 20px;
                 }
                 .recaptcha{
                     @include flexbox();
@@ -105,28 +108,35 @@ section.contact{
                     @include flex-wrap(wrap);
                     iframe{
                         transform-origin: center;
-                        transform: scale(.9);
+                        transform: scale(.8);
+                    }
+                }
+                .submit_button{
+                    .submit{
+                        float: right;
+                        font-size: 2em;
+                        font-weight: 500;
+                        color: $darkBlue;
+                        border: 0;
+                        background-color: $blue;
+                        cursor: pointer;
+                        text-transform: uppercase;
+                        padding: 14px 60px;
+                        margin-top: 15px;
+                        @media only screen and (min-width: 992px) {
+                            margin: 0;
+                        }
+                    }
+                }
+                .inner_flex{
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include flex-wrap(wrap);
+                    @include align-items(center);
+                    @media only screen and (min-width: 992px) {
+                        @include justify-content(flex-end);
                     }
 
-                }
-                .submit{
-                    color: $blue;
-                    margin: 30px auto;
-                    border: 0;
-                    background-color: $blue;
-                    background-image: url(../img/svg/send.svg);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    width: 60px;
-                    height: 60px;
-                    border-radius: 50%;
-                    cursor: pointer;
-                    @media only screen and (min-width: 768px) {
-                        margin: 0;
-                        position: absolute;
-                        bottom: -30px;
-                        right: -30px;
-                    }
                 }
                 label{
                     font-size: 1.4em;
@@ -140,7 +150,7 @@ section.contact{
                     border: 0;
                     width: 100%;
                     border: 1px solid rgba(60,60,60, .1);
-                    margin-bottom: 50px;
+                    margin-bottom: 30px;
                     padding: 10px;
                     font-size: 1.8em;
                     font-weight: 300;
@@ -153,7 +163,7 @@ section.contact{
                 textarea{
                     padding: 10px;
                     width: 100%;
-                    max-height: 184px;
+                    max-height: 180px;
                     font-size: 1.8em;
                     font-weight: 300;
                     color: #3c3c3c;
@@ -187,7 +197,7 @@ section.contact{
             max-width: 100%;
             padding: 20px 20px;
             @media only screen and (min-width: 768px) {
-                padding: 60px 20px;
+                padding: 30px 20px;
             }
             @media only screen and (min-width: 992px) {
                 font-size: .8em;
