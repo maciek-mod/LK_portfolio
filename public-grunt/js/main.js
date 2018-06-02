@@ -6,7 +6,8 @@ $(document).ready(function() {
         main_page = $(".main_page"),
         button_section = $(".button_section"),
         section_main = $("body.home").find("section"),
-        bottom_position = null;
+        bottom_position = null,
+        lastScrollTop = 0;
 
     // menu mobile
     $("#nav-icon4").click(function() {
@@ -45,10 +46,9 @@ $(document).ready(function() {
                 scrollTop: section_position
             }, time, function() {});
         });
-        $(window).scroll(function(event) {
-            showSection();
-        });
-        function showSection(){
+
+
+        function showSection() {
             pos_doc2 = $(window).scrollTop();
             bottom_position = pos_doc2 + $(window).height();
             section_main.each(function(index) {
@@ -57,7 +57,7 @@ $(document).ready(function() {
                 }
             });
         }
-        showSection();
+        // showSection();
     }
 
     // scroll menu
@@ -122,7 +122,7 @@ $(document).ready(function() {
     //ukrywanie powyzej 3 postówarn
 
     function showButtonMore() {
-        if ($(".portfolio_inner").find(".item_flex").length > 2) {
+        if ($(".portfolio_inner").find(".item_flex").length > 3) {
             $(".show_all").show();
             $(".show_all").on("click", function(event) {
                 event.preventDefault();
@@ -150,9 +150,30 @@ $(document).ready(function() {
         heightEl = $(this).outerHeight();
         positionX = event.clientX;
         positionY = event.clientY;
-        positionLeft = ((((widthEl / 2) - positionX) * 100) / widthEl)/ 15;
-        positionTop = ((((heightEl / 2) - positionY) * 100) / heightEl)/ 15;
-        paralaxImg.css({"left": -10 + positionLeft + "%", "top": -10 + positionTop + "%"});
+        positionLeft = ((((widthEl / 2) - positionX) * 100) / widthEl) / 15;
+        positionTop = ((((heightEl / 2) - positionY) * 100) / heightEl) / 15;
+        paralaxImg.css({
+            "left": -10 + positionLeft + "%",
+            "top": -10 + positionTop + "%"
+        });
+    });
+
+
+    // chowajace sie menu
+    var header_element = $("header"),
+        header_height = header_element.outerHeight() + header_element.position().top;
+    $(window).scroll(function(event) {
+        // showSection();
+        var st = $(this).scrollTop();
+        if (st > header_height) {
+            if (st > lastScrollTop) {
+                nav_elemnt.addClass("hide_up");
+            } else {
+                nav_elemnt.removeClass("hide_up");
+            }
+        }
+
+        lastScrollTop = st;
     });
 
 

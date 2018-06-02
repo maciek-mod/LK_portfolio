@@ -1,22 +1,47 @@
 section.portfolio {
+    background: #ffffff; /* Old browsers */
+    background: -moz-linear-gradient(top, #ffffff 1%, #ffffff 5%, #f9f9f9 5%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #ffffff 1%,#ffffff 5%,#f9f9f9 5%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #ffffff 1%,#ffffff 5%,#f9f9f9 5%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     .portfolio_inner {
         .item_flex {
             @include flexbox();
             @include flex-wrap(wrap);
             @include align-items(center);
             padding: 20px 0;
+            background: white;
+
+            &:first-of-type{
+                background: #f9f9f9;
+            }
             @media only screen and (min-width: 768px) {
                 padding: 40px 0;
+                &:first-of-type{
+                    padding: 20px 0 40px 0;
+                }
             }
             @media only screen and (min-width: 1024px) {
                 padding: 60px 0;
+                &:first-of-type{
+                    padding: 20px 0 60px 0;
+                }
             }
             @media only screen and (min-width: 1366px) {
                 padding: 80px 0;
+                &:first-of-type{
+                    padding: 30px 0 80px 0;
+
+                }
             }
             @media only screen and (min-width: 1600px) {
                 padding: 100px 0;
+                &:first-of-type{
+                    padding: 40px 0 100px 0;
+
+                }
             }
+
+
 
             .img_container {
                 flex-basis: 100%;
@@ -34,6 +59,14 @@ section.portfolio {
                     @media only screen and (min-width: 768px) {
                         width: 100%;
                         max-width: inherit;
+                    }
+                    @media only screen and (min-width: 1366px) {
+                        width: 70%;
+                        max-width: none;
+                    }
+                    @media only screen and (min-width: 1600px) {
+                        width: 60%;
+                        max-width: none;
                     }
                 }
             }
@@ -86,6 +119,9 @@ section.portfolio {
                     line-height: 1.2;
                     padding-bottom: 20px;
                     max-width: 100%;
+                    @media only screen and (min-width: 1600px){
+                        font-size: 7.5em;
+                    }
                 }
             }
             &:nth-child(1n+4){

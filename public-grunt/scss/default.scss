@@ -111,7 +111,7 @@ body{
         padding: 70px 0 60px 0;
     }
     @media only screen and (min-width: 1024px) {
-        padding: 100px 0 90px 0;
+        padding: 100px 0 40px 0;
     }
     h2.title{
         font-size: 5em;
@@ -155,8 +155,8 @@ body{
             background: $blue;
             @include transition(1s);
             @media only screen and (min-width: 768px) {
-                top: 51%;
-                right: -20%;
+                top: 33%;
+                right: -19%;
                 width: 0px;
                 height: 30px;
             }
@@ -191,7 +191,7 @@ body{
             &:after{
                 width: 109px;
                 @media only screen and (min-width: 768px) {
-                    width: 200px;
+                    width: 150px;
                 }
             }
         }

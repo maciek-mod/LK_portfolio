@@ -1,4 +1,9 @@
 section.ofert{
+    .head_container{
+        @media only screen and (min-width: 1024px) {
+            padding: 100px 0 60px 0;
+        }
+    }
     .oferts_flex{
         @include flexbox();
         @include flex-wrap(wrap);

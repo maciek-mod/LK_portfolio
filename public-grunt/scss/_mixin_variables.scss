@@ -22,7 +22,7 @@ $backGrey: #ededed;
     font-size: 1.5em;
     font-weight: 700;
     text-transform: uppercase;
-    @include transition(.5s);
+    @include transition(.3s);
     margin-bottom: 15px;
     @media only screen and (min-width: 768px) {
         font-size: 1.4em;

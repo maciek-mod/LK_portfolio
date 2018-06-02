@@ -52,7 +52,7 @@ get_header(); ?>
 	</div>
 </header>
 
-<section class="ofert hidden_section" id="ofert">
+<section class="ofert " id="ofert">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title"><?php echo $h2Ofert ?></h2>
@@ -98,7 +98,7 @@ get_header(); ?>
 		</div>
 	</div>
 </section>
-<section class="portfolio hidden_section" id="portfolio">
+<section class="portfolio " id="portfolio">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title second"><?php echo $h2Portfolio ?></h2>
@@ -128,7 +128,7 @@ get_header(); ?>
 	</div>
 </section>
 
-<section class="contact hidden_section">
+<section class="contact ">
 	<div class="container">
 		<div class="head_container">
 			<h2 class="title third"><?php echo $h2Contact ?></h2>
