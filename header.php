@@ -37,6 +37,15 @@
 <meta name="msapplication-TileImage" content="<?php bloginfo('template_url'); ?>/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
 
+<meta property="og:title" content="Łukasz Wróbel Portfolio – Projektowania i wdrażanie stron www, aplikacji, projektowanie graficzne">
+<meta property="og:site_name" content="Łukasz Wróbel Portfolio">
+<meta property="og:url" content="http://www.lukaszwrobel.me/">
+<meta property="og:description" content="Chętnie z zespołem zajmiemy się stworzeniem Twojej strony www od strony wizualnej i wdrożeniowej. Lubimy nowe wyzwania z każdej dziedziny. Traktuję klientów na równi i z szacunkiem – razem pracujemy..">
+<meta property="og:type" content="website">
+<meta property="og:image" content="<?php bloginfo('template_url'); ?>/img/facebook_share.jpg" />
+
+
+
 <?php wp_head(); ?>
 </head>
 

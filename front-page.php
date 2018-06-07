@@ -22,6 +22,10 @@ get_header(); ?>
 	$h2Portfolio ="PORTFOLIO";
 	$h2Contact ="CONTACT";
 	$buttonCheckAll = "see all realizations";
+	$myOferts1 = "Pages WWW";
+	$myOferts2 = "Mobile applications";
+	$myOferts3 = "Graphic design";
+	$myOferts4 = "Visual identification";
 
 } else if (pll_current_language() == 'pl') {
 	$h1Text = "<h1>Mam na imię Łukasz.</h1><h2>Jak mogę Ci pomóc?</h2>";
@@ -31,14 +35,35 @@ get_header(); ?>
 	$h2Portfolio ="PORTFOLIO";
 	$h2Contact ="KONTAKT";
 	$buttonCheckAll = "zobacz wszystkie realizacje";
+	$myOferts1 = "Strony WWW";
+	$myOferts2 = "Aplikacje mobilne";
+	$myOferts3 = "Projektowanie graficzne";
+	$myOferts4 = "Identyfikacja wizualna";
+
 
 } ?>
 
 <header class="main_page" id="main_page">
-	<img id="paralax" src="<?php bloginfo('template_url'); ?>/img/header_paralax.png" alt="paralax" />
+	<img id="paralax" src="<?php bloginfo('template_url'); ?>/img/header_paralax.jpg" alt="paralax" />
 	<div class="container">
 		<div class="text_container">
 			<?php echo $h1Text ?>
+		</div>
+		<div class="my_offert">
+			<ul>
+				<li>
+					<?php echo $myOferts1 ?>
+				</li>
+				<li>
+					<?php echo $myOferts2 ?>
+				</li>
+				<li>
+					<?php echo $myOferts3 ?>
+				</li>
+				<li>
+					<?php echo $myOferts4 ?>
+				</li>
+			</ul>
 		</div>
 		<div class="button_section">
 			<a class="button" href="/" data-scroll="ofert"> <?php echo $buttonCheck ?> </a>
@@ -55,7 +80,7 @@ get_header(); ?>
 <section class="ofert " id="ofert">
 	<div class="container">
 		<div class="head_container">
-			<h2 class="title"><?php echo $h2Ofert ?></h2>
+			<h2 class="title first_head"><?php echo $h2Ofert ?></h2>
 		</div>
 		<div class="oferts_flex">
 			<div class="flex_inner">
