@@ -1,3 +1,10 @@
+// Wiaodmosc dla deva i tylko deva.
+// Z góry przepraszam przysłego deva, który to będzie musiał utrzymac, klient ciezki a i dziecko mi się urodziło, więc z braku czasu, czasem szłem łatwiejszą (dla utrzymania złą) drogą.
+// Szybka instrukcja, uzyty jest grunt, instalacja "npm install" w folderze "_grunt", a potem tylko "grunt watch" do odpalenia.
+// Generalnie na tym kliencie nauczyłem się nie robic projektów dla znajomych za bezcen, trzeba im dowalic x2 stawki, bo szkoda twojego czasu. Klient narzeka ze projekt powinien byc oddany miesiac temu, ale sam odpowiada z tygodniowymi przerwami, a potem ASAP ASAP. Z dzieckiem jest to cięzkie, bo jak śpi to nie mozna pracowac na monitorze full hd, a zostaje ci tylko zwykły laptopowy, aby dziecka nie obudzic dziecka. Pamiętaj oko grafika to +20pkt do "1px w lewo", albo czemu mobile wyglada tak zle (a no bo nie dostałem projektu mobile, a sam full hd), oraz najważniejsze czemu to wygląda tak źle (bo jest zgodne z projektem). A i wymagaj screenow i projektów z nowym pomysłem, bo widomosc ze "buttony odrobinke mniejszy" to czasem 2/3 poprawki bo nie jest az tak mniejszy.
+
+//jak nie widac zmian po wgraniu css, trzeba zmienic numerek hash w pliku function.php, np "/public/css/default.min.css?25" wyższy albo rózny numerek.
+
 @import "_mixin_variables.scss";
 @import "_font.scss";
 @import "_reset.scss";
@@ -185,7 +192,7 @@ body {
 }
 
 .container {
-    width: 94%;
+    width: 87%;
     max-width: 1360px;
     margin: 0 auto;
 }
@@ -193,7 +200,7 @@ body {
 .head_container {
     width: 100%;
     text-align: center;
-    padding: 50px 0 40px;
+    padding: 50px 0 30px;
     @media only screen and (min-width: 768px) {
         padding: 70px 0 60px;
     }
@@ -202,7 +209,7 @@ body {
     }
 
     h2.title {
-        font-size: 5em;
+        font-size: 4.5em;
         font-weight: 800;
         color: $blueText;
         text-align: center;
@@ -320,7 +327,7 @@ body {
     border-radius: 30px;
     text-decoration: none;
     text-transform: uppercase;
-    padding: 15px 30px;
+    padding: 20px 30px;
     @media only screen and (min-width: 768px) {
         padding: 15px 30px;
     }

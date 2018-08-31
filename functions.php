@@ -1,6 +1,10 @@
 <?php
 
+
+
 add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
+
+add_filter('jpeg_quality', function($arg){return 100;});
 
 function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
     $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
@@ -22,7 +26,7 @@ wp_enqueue_script('main_js');
 add_action( 'wp_enqueue_scripts', 'wpb_adding_scripts2' );
 
 function wpb_adding_styles() {
-wp_register_style('my_stylesheet', get_template_directory_uri() . '/public/css/default.min.css', __FILE__ );
+wp_register_style('my_stylesheet', get_template_directory_uri() . '/public/css/default.min.css?39', __FILE__ );
 wp_enqueue_style('my_stylesheet');
 }
 add_action( 'wp_enqueue_scripts', 'wpb_adding_styles' );

@@ -100,12 +100,20 @@ section.portfolio {
                     padding-left: 100px;
                     font-size: 1em;
                 }
-
+                .des{
+                    font-size: 12px;
+                    font-weight: 500;
+                    padding-bottom: 30px;
+                    line-height: 1.6;
+                    @media only screen and (min-width: 768px){
+                        display: none;
+                    }
+                }
                 .category {
-                    font-size: 4em;
+                    font-size: 4.5em;
                     font-weight: 800;
                     color: $blue;
-                    padding: 15px 0 10px 0;
+                    padding: 25px 0 10px 0;
                     @media only screen and (min-width: 768px){
                         padding: 0;
                         font-size: 3em;
@@ -118,7 +126,7 @@ section.portfolio {
                 }
 
                 .name {
-                    font-size: 9.5em;
+                    font-size: 10.7em;
                     font-weight: 800;
                     color: $blueText;
                     line-height: 1.2;
@@ -128,6 +136,7 @@ section.portfolio {
                         font-size: 7.5em;
                     }
                 }
+
             }
             &:nth-child(1n+4){
                 display: none;

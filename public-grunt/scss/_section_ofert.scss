@@ -43,27 +43,33 @@ section.ofert{
                     @include justify-content(flex-start);
                     @include align-items(flex-end);
                     img{
-                        margin-right: 10px;
+                        margin-right: 20px;
                         @media only screen and (min-width: 1300px) {
                             margin-right: 20px;
                         }
                     }
                     p{
-                        font-size: 1.6em;
+                        font-size: 2.2em;
                         color: $blueText;
                         line-height: 1.2;
                         text-transform: uppercase;
                         span{
                             font-weight: 800;
                         }
-                        @media only screen and (min-width: 1300px) {
+                        @media only screen and (min-width: 768px) {
+                            font-size: 1.4em;
+                        }
+                        @media only screen and (min-width: 1366px) {
+                            font-size: 1.5em;
+                        }
+                        @media only screen and (min-width: 1600px) {
                             font-size: 1.9em;
                         }
                     }
                 }
                 .text{
                     padding-top: 20px;
-                    font-size: 1.3em;
+                    font-size: 1.5em;
                     font-weight: 500;
                     color: $blueText;
                     line-height: 1.85;
